@@ -1,4 +1,4 @@
-package org.example;
+package cep;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
