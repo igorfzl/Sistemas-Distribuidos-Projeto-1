@@ -64,7 +64,7 @@
 
         <div th:each="produto : ${produtos}" class="produto">
             <input type="checkbox" th:field="*{produtosIds}" th:value="${produto.id}">
-            <span th:text="${produto.nome} + ' - R$' + ${produto.preco}"></span>
+            <span th:text="${produto.nome} + ' - R$ ' + ${#numbers.formatDecimal(produto.preco, 1, 'POINT', 2, 'COMMA')}"></span>
         </div>
 
         <h3>Dados de Entrega e Pagamento</h3>
