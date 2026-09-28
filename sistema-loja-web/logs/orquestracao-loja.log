@@ -1,0 +1,176 @@
+2026-09-28T11:29:17.149-03:00  INFO 18832 --- [restartedMain] loja.App                                 : Starting App using Java 25.0.4.1 with PID 18832 (C:\Users\igorw\Desktop\Faculdade\Sistemas Distribuidos\Sistemas-Distribuidos-Projeto-1\sistema-loja-web\target\classes started by igorw in C:\Users\igorw\Desktop\Faculdade\Sistemas Distribuidos\Sistemas-Distribuidos-Projeto-1\sistema-loja-web)
+2026-09-28T11:29:17.152-03:00  INFO 18832 --- [restartedMain] loja.App                                 : No active profile set, falling back to 1 default profile: "default"
+2026-09-28T11:29:17.206-03:00  INFO 18832 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-28T11:29:17.215-03:00  INFO 18832 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-28T11:29:18.371-03:00  INFO 18832 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-28T11:29:18.402-03:00  INFO 18832 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-28T11:29:18.403-03:00  INFO 18832 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-09-28T11:29:18.497-03:00  INFO 18832 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-28T11:29:18.498-03:00  INFO 18832 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1283 ms
+2026-09-28T11:29:18.720-03:00  INFO 18832 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerping    : Adding welcome page template: index
+2026-09-28T11:29:19.251-03:00  WARN 18832 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-09-28T11:29:19.312-03:00  INFO 18832 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-09-28T11:29:19.330-03:00  INFO 18832 --- [restartedMain] loja.App                                 : Started App in 2.657 seconds (process running for 4.978)
+2026-09-28T11:29:20.131-03:00  INFO 18832 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-28T11:29:20.131-03:00  INFO 18832 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-28T11:29:20.133-03:00  INFO 18832 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-28T11:29:37.331-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : === INICIANDO ORQUESTRAÇÃO DE COMPRA (Pedido: 947ad564-b9c7-42c8-adaf-7c00f3236fba) ===
+2026-09-28T11:29:37.332-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Passo 6: Acionando Email Web API (8083) para confirmação da compra...
+2026-09-28T11:29:37.350-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:29:37.3468432}
+2026-09-28T11:29:37.351-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Passo 7: Acionando Pagamento Web API (8086)...
+2026-09-28T11:29:37.367-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Retorno Pagamento API: {status=APROVADO, codigoTransacao=dbbbfeaa-1369-4ebe-9b6d-6e332aa6e209}
+2026-09-28T11:29:37.368-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Passo 8: Acionando Email Web API (8083) com resultado do pagamento...
+2026-09-28T11:29:37.376-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:29:37.3759186}
+2026-09-28T11:29:37.376-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Passo 9: Acionando Fiscal Web API (8085)...
+2026-09-28T11:29:37.380-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Retorno Fiscal API: {numeroNota=046507422, chaveAcesso=2AD526F99CA44FD7BC5194E1D78E861A, status=AUTORIZADA}
+2026-09-28T11:29:37.380-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Passo 10: Acionando Email Web API (8083) com a nota fiscal...
+2026-09-28T11:29:37.392-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:29:37.39117}
+2026-09-28T11:29:37.392-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Passo 11: Acionando Entrega Web API (8084)...
+2026-09-28T11:29:37.395-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Retorno Entrega API: {codigoRastreio=b9d733d4-b9d9-4969-8f02-1e708319e5f7, status=AGUARDANDO_COLETA, diasEstimados=5}
+2026-09-28T11:29:37.396-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Passo 12: Acionando Email Web API (8083) com dados da entrega...
+2026-09-28T11:29:37.406-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:29:37.4054863}
+2026-09-28T11:29:37.406-03:00  INFO 18832 --- [http-nio-8080-exec-2] loja.service.OrquestradorService         : === ORQUESTRAÇÃO CONCLUÍDA COM SUCESSO ===
+2026-09-28T11:30:08.184-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : === INICIANDO ORQUESTRAÇÃO DE COMPRA (Pedido: 5b034da6-71aa-4652-8b92-4d69e0336526) ===
+2026-09-28T11:30:08.185-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 6: Acionando Email Web API (8083) para confirmação da compra...
+2026-09-28T11:30:08.199-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:30:08.1975497}
+2026-09-28T11:30:08.199-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 7: Acionando Pagamento Web API (8086)...
+2026-09-28T11:30:08.214-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Pagamento API: {status=APROVADO, codigoTransacao=47ca6ebf-b799-4720-8cc2-e39f295ea7c9}
+2026-09-28T11:30:08.214-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 8: Acionando Email Web API (8083) com resultado do pagamento...
+2026-09-28T11:30:08.229-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:30:08.2282343}
+2026-09-28T11:30:08.230-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 9: Acionando Fiscal Web API (8085)...
+2026-09-28T11:30:08.246-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Fiscal API: {numeroNota=508437284, chaveAcesso=52955DB59F024D308855E2C03C53F3A8, status=AUTORIZADA}
+2026-09-28T11:30:08.246-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 10: Acionando Email Web API (8083) com a nota fiscal...
+2026-09-28T11:30:08.262-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:30:08.2602194}
+2026-09-28T11:30:08.262-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 11: Acionando Entrega Web API (8084)...
+2026-09-28T11:30:08.278-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Entrega API: {codigoRastreio=c4e2ebff-cfbe-4675-8960-2713dc855ceb, status=AGUARDANDO_COLETA, diasEstimados=5}
+2026-09-28T11:30:08.278-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 12: Acionando Email Web API (8083) com dados da entrega...
+2026-09-28T11:30:08.294-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:30:08.2930123}
+2026-09-28T11:30:08.294-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : === ORQUESTRAÇÃO CONCLUÍDA COM SUCESSO ===
+2026-09-28T11:31:09.832-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : === INICIANDO ORQUESTRAÇÃO DE COMPRA (Pedido: cca4ac31-a185-46ec-b225-22130dd3767f) ===
+2026-09-28T11:31:09.832-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 6: Acionando Email Web API (8083) para confirmação da compra...
+2026-09-28T11:31:09.851-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:31:09.8463839}
+2026-09-28T11:31:09.852-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 7: Acionando Pagamento Web API (8086)...
+2026-09-28T11:31:09.859-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Pagamento API: {status=APROVADO, codigoTransacao=0fc85cf3-f380-4b6f-a3dc-dd4a6d40bf5a}
+2026-09-28T11:31:09.859-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 8: Acionando Email Web API (8083) com resultado do pagamento...
+2026-09-28T11:31:09.865-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:31:09.8649461}
+2026-09-28T11:31:09.865-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 9: Acionando Fiscal Web API (8085)...
+2026-09-28T11:31:09.870-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Fiscal API: {numeroNota=668383633, chaveAcesso=3F1DE02D744A4B0E9775D272F7529C3A, status=AUTORIZADA}
+2026-09-28T11:31:09.870-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 10: Acionando Email Web API (8083) com a nota fiscal...
+2026-09-28T11:31:09.881-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:31:09.8807779}
+2026-09-28T11:31:09.881-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 11: Acionando Entrega Web API (8084)...
+2026-09-28T11:31:09.885-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Entrega API: {codigoRastreio=142427e8-6285-490e-b721-969d441523d5, status=AGUARDANDO_COLETA, diasEstimados=5}
+2026-09-28T11:31:09.885-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 12: Acionando Email Web API (8083) com dados da entrega...
+2026-09-28T11:31:09.895-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:31:09.8947795}
+2026-09-28T11:31:09.895-03:00  INFO 18832 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : === ORQUESTRAÇÃO CONCLUÍDA COM SUCESSO ===
+2026-09-28T11:32:42.986-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : === INICIANDO ORQUESTRAÇÃO DE COMPRA (Pedido: 0297e8b8-f19e-4c30-8d2d-20336a973d60) ===
+2026-09-28T11:32:42.986-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 6: Acionando Email Web API (8083) para confirmação da compra...
+2026-09-28T11:32:42.993-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:32:42.9913384}
+2026-09-28T11:32:42.993-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 7: Acionando Pagamento Web API (8086)...
+2026-09-28T11:32:42.997-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Pagamento API: {status=APROVADO, codigoTransacao=c7ea3d28-540c-4fce-919a-d93630cc1912}
+2026-09-28T11:32:42.998-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 8: Acionando Email Web API (8083) com resultado do pagamento...
+2026-09-28T11:32:43.008-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:32:43.0061248}
+2026-09-28T11:32:43.008-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 9: Acionando Fiscal Web API (8085)...
+2026-09-28T11:32:43.012-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Fiscal API: {numeroNota=400426783, chaveAcesso=A61A550A6918472988659EF5C18D592A, status=AUTORIZADA}
+2026-09-28T11:32:43.013-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 10: Acionando Email Web API (8083) com a nota fiscal...
+2026-09-28T11:32:43.021-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:32:43.0207159}
+2026-09-28T11:32:43.021-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 11: Acionando Entrega Web API (8084)...
+2026-09-28T11:32:43.025-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Entrega API: {codigoRastreio=4b451627-990c-40e6-90ea-3b4fde4c43f0, status=AGUARDANDO_COLETA, diasEstimados=5}
+2026-09-28T11:32:43.025-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Passo 12: Acionando Email Web API (8083) com dados da entrega...
+2026-09-28T11:32:43.038-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T11:32:43.0371155}
+2026-09-28T11:32:43.038-03:00  INFO 18832 --- [http-nio-8080-exec-6] loja.service.OrquestradorService         : === ORQUESTRAÇÃO CONCLUÍDA COM SUCESSO ===
+2026-09-28T11:40:01.428-03:00  INFO 11372 --- [restartedMain] loja.App                                 : Starting App using Java 25.0.4.1 with PID 11372 (C:\Users\igorw\Desktop\Faculdade\Sistemas Distribuidos\Sistemas-Distribuidos-Projeto-1\sistema-loja-web\target\classes started by igorw in C:\Users\igorw\Desktop\Faculdade\Sistemas Distribuidos\Sistemas-Distribuidos-Projeto-1\sistema-loja-web)
+2026-09-28T11:40:01.431-03:00  INFO 11372 --- [restartedMain] loja.App                                 : No active profile set, falling back to 1 default profile: "default"
+2026-09-28T11:40:01.491-03:00  INFO 11372 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-28T11:40:01.492-03:00  INFO 11372 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-28T11:40:02.344-03:00  INFO 11372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-28T11:40:02.355-03:00  INFO 11372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-28T11:40:02.355-03:00  INFO 11372 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-09-28T11:40:02.393-03:00  INFO 11372 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-28T11:40:02.394-03:00  INFO 11372 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 900 ms
+2026-09-28T11:40:02.494-03:00  INFO 11372 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-28T11:40:02.668-03:00  WARN 11372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-09-28T11:40:02.692-03:00  INFO 11372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-09-28T11:40:02.697-03:00  INFO 11372 --- [restartedMain] loja.App                                 : Started App in 1.745 seconds (process running for 2.419)
+2026-09-28T11:40:11.459-03:00  INFO 11372 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-28T11:40:11.459-03:00  INFO 11372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-28T11:40:11.461-03:00  INFO 11372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-28T11:46:55.989-03:00  INFO 16772 --- [restartedMain] loja.App                                 : Starting App using Java 25.0.4.1 with PID 16772 (C:\Users\igorw\Desktop\Faculdade\Sistemas Distribuidos\Sistemas-Distribuidos-Projeto-1\sistema-loja-web\target\classes started by igorw in C:\Users\igorw\Desktop\Faculdade\Sistemas Distribuidos\Sistemas-Distribuidos-Projeto-1\sistema-loja-web)
+2026-09-28T11:46:55.993-03:00  INFO 16772 --- [restartedMain] loja.App                                 : No active profile set, falling back to 1 default profile: "default"
+2026-09-28T11:46:56.064-03:00  INFO 16772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-28T11:46:56.064-03:00  INFO 16772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-28T11:46:56.847-03:00  INFO 16772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-28T11:46:56.859-03:00  INFO 16772 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-28T11:46:56.859-03:00  INFO 16772 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-09-28T11:46:56.907-03:00  INFO 16772 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-28T11:46:56.907-03:00  INFO 16772 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 843 ms
+2026-09-28T11:46:57.012-03:00  INFO 16772 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-28T11:46:57.230-03:00  WARN 16772 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-09-28T11:46:57.253-03:00  INFO 16772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-09-28T11:46:57.260-03:00  INFO 16772 --- [restartedMain] loja.App                                 : Started App in 1.726 seconds (process running for 2.361)
+2026-09-28T11:47:08.178-03:00  INFO 16772 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-28T11:47:08.178-03:00  INFO 16772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-28T11:47:08.179-03:00  INFO 16772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-28T13:26:45.482-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : === INICIANDO ORQUESTRAÇÃO DE COMPRA (Pedido: 7939171f-96b0-425b-b723-3ec4eee253d6) ===
+2026-09-28T13:26:45.485-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Passo 6: Acionando Email Web API (8083) para confirmação da compra...
+2026-09-28T13:26:45.513-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:26:45.5036468}
+2026-09-28T13:26:45.514-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Passo 7: Acionando Pagamento Web API (8086)...
+2026-09-28T13:26:45.532-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Retorno Pagamento API: {status=APROVADO, codigoTransacao=a4edebc3-0f90-4d01-8249-bee04f71551e}
+2026-09-28T13:26:45.533-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Passo 8: Acionando Email Web API (8083) com resultado do pagamento...
+2026-09-28T13:26:45.553-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:26:45.5512019}
+2026-09-28T13:26:45.554-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Passo 9: Acionando Fiscal Web API (8085)...
+2026-09-28T13:26:45.571-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Retorno Fiscal API: {numeroNota=763553765, chaveAcesso=E0EA16AC3FC14C4485AC93E65A8C421E, status=AUTORIZADA}
+2026-09-28T13:26:45.571-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Passo 10: Acionando Email Web API (8083) com a nota fiscal...
+2026-09-28T13:26:45.583-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:26:45.5828746}
+2026-09-28T13:26:45.584-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Passo 11: Acionando Entrega Web API (8084)...
+2026-09-28T13:26:45.600-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Retorno Entrega API: {codigoRastreio=1818a52c-aa65-4b3f-8eb4-b8942b8358ab, status=AGUARDANDO_COLETA, diasEstimados=5}
+2026-09-28T13:26:45.601-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Passo 12: Acionando Email Web API (8083) com dados da entrega...
+2026-09-28T13:26:45.616-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:26:45.6149176}
+2026-09-28T13:26:45.616-03:00  INFO 16772 --- [http-nio-8080-exec-8] loja.service.OrquestradorService         : === ORQUESTRAÇÃO CONCLUÍDA COM SUCESSO ===
+2026-09-28T13:26:53.829-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : === INICIANDO ORQUESTRAÇÃO DE COMPRA (Pedido: af339525-14f9-49ec-934a-c1c03d38b506) ===
+2026-09-28T13:26:53.829-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 6: Acionando Email Web API (8083) para confirmação da compra...
+2026-09-28T13:26:53.838-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:26:53.8363049}
+2026-09-28T13:26:53.838-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 7: Acionando Pagamento Web API (8086)...
+2026-09-28T13:26:53.852-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Pagamento API: {status=APROVADO, codigoTransacao=3727d92e-e3e0-4589-a7a0-d89aae506173}
+2026-09-28T13:26:53.853-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 8: Acionando Email Web API (8083) com resultado do pagamento...
+2026-09-28T13:26:53.867-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:26:53.8661749}
+2026-09-28T13:26:53.867-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 9: Acionando Fiscal Web API (8085)...
+2026-09-28T13:26:53.883-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Fiscal API: {numeroNota=614462654, chaveAcesso=86391832E2374A32AF8E49A41685F72D, status=AUTORIZADA}
+2026-09-28T13:26:53.883-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 10: Acionando Email Web API (8083) com a nota fiscal...
+2026-09-28T13:26:53.898-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:26:53.8967128}
+2026-09-28T13:26:53.898-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 11: Acionando Entrega Web API (8084)...
+2026-09-28T13:26:53.913-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Entrega API: {codigoRastreio=844a0ef6-baa8-4d66-a991-2d78fd905b32, status=AGUARDANDO_COLETA, diasEstimados=5}
+2026-09-28T13:26:53.914-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Passo 12: Acionando Email Web API (8083) com dados da entrega...
+2026-09-28T13:26:53.929-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:26:53.9285401}
+2026-09-28T13:26:53.929-03:00  INFO 16772 --- [http-nio-8080-exec-5] loja.service.OrquestradorService         : === ORQUESTRAÇÃO CONCLUÍDA COM SUCESSO ===
+2026-09-28T13:29:31.432-03:00  INFO 9180 --- [restartedMain] loja.App                                 : Starting App using Java 25.0.4.1 with PID 9180 (C:\Users\igorw\Desktop\Faculdade\Sistemas Distribuidos\Sistemas-Distribuidos-Projeto-1\sistema-loja-web\target\classes started by igorw in C:\Users\igorw\Desktop\Faculdade\Sistemas Distribuidos\Sistemas-Distribuidos-Projeto-1\sistema-loja-web)
+2026-09-28T13:29:31.434-03:00  INFO 9180 --- [restartedMain] loja.App                                 : No active profile set, falling back to 1 default profile: "default"
+2026-09-28T13:29:31.487-03:00  INFO 9180 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-28T13:29:31.488-03:00  INFO 9180 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-28T13:29:32.289-03:00  INFO 9180 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-28T13:29:32.300-03:00  INFO 9180 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-28T13:29:32.300-03:00  INFO 9180 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-09-28T13:29:32.337-03:00  INFO 9180 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-28T13:29:32.337-03:00  INFO 9180 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 848 ms
+2026-09-28T13:29:32.428-03:00  INFO 9180 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-28T13:29:32.615-03:00  WARN 9180 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-09-28T13:29:32.638-03:00  INFO 9180 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-09-28T13:29:32.645-03:00  INFO 9180 --- [restartedMain] loja.App                                 : Started App in 1.605 seconds (process running for 2.234)
+2026-09-28T13:29:44.988-03:00  INFO 9180 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-28T13:29:44.988-03:00  INFO 9180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-28T13:29:44.989-03:00  INFO 9180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-28T13:29:52.217-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : === INICIANDO ORQUESTRAÇÃO DE COMPRA (Pedido: c799bd0c-8e27-4c0e-a04f-4e7926f8b3f5) ===
+2026-09-28T13:29:52.218-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Passo 6: Acionando Email Web API (8083) para confirmação da compra...
+2026-09-28T13:29:52.236-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:29:52.23226}
+2026-09-28T13:29:52.236-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Passo 7: Acionando Pagamento Web API (8086)...
+2026-09-28T13:29:52.252-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Retorno Pagamento API: {status=APROVADO, codigoTransacao=6bd0deda-5938-4ca4-8d46-503c39d00524}
+2026-09-28T13:29:52.252-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Passo 8: Acionando Email Web API (8083) com resultado do pagamento...
+2026-09-28T13:29:52.256-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:29:52.255264}
+2026-09-28T13:29:52.257-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Passo 9: Acionando Fiscal Web API (8085)...
+2026-09-28T13:29:52.260-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Retorno Fiscal API: {numeroNota=326436356, chaveAcesso=26D93BB002DC4C4698CB7CF1C1E0E177, status=AUTORIZADA}
+2026-09-28T13:29:52.261-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Passo 10: Acionando Email Web API (8083) com a nota fiscal...
+2026-09-28T13:29:52.271-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:29:52.2709069}
+2026-09-28T13:29:52.271-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Passo 11: Acionando Entrega Web API (8084)...
+2026-09-28T13:29:52.275-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Retorno Entrega API: {codigoRastreio=f609627b-458c-4446-816f-1f45a3e472c8, status=AGUARDANDO_COLETA, diasEstimados=5}
+2026-09-28T13:29:52.275-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Passo 12: Acionando Email Web API (8083) com dados da entrega...
+2026-09-28T13:29:52.287-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : Retorno Email Web API: {status=SUCESSO, mensagem=O e-mail foi processado e enviado (simulação) com sucesso., dataEnvio=2026-09-28T13:29:52.2869155}
+2026-09-28T13:29:52.287-03:00  INFO 9180 --- [http-nio-8080-exec-3] loja.service.OrquestradorService         : === ORQUESTRAÇÃO CONCLUÍDA COM SUCESSO ===

@@ -3,9 +3,9 @@ package cep.controller;
 import cep.dto.EnderecoResponse;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/cep")
+@CrossOrigin("*")
 public class CepController {
 
     @GetMapping("/{cep}")

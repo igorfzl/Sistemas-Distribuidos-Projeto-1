@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <title>Loja Web - E-commerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .produto {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Catálogo de Produtos</h2>
+
+    <form th:action="@{/comprar}" th:object="${compraForm}" method="post">
+
+        <div th:each="produto : ${produtos}" class="produto">
+            <input type="checkbox" th:field="*{produtosIds}" th:value="${produto.id}">
+            <span th:text="${produto.nome} + ' - R$' + ${produto.preco}"></span>
+        </div>
+
+        <h3>Dados de Entrega e Pagamento</h3>
+
+        <div class="form-group">
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" th:field="*{cep}" onblur="buscarCep()" required
+                   placeholder="Digite um CEP e clique fora">
+        </div>
+
+        <div class="form-group">
+            <label for="endereco">Logradouro (Automático):</label>
+            <input type="text" id="endereco" readonly style="background-color: #e9ecef;">
+        </div>
+        <div class="form-group">
+            <label for="bairro">Bairro (Automático):</label>
+            <input type="text" id="bairro" readonly style="background-color: #e9ecef;">
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade/UF (Automático):</label>
+            <input type="text" id="cidade" readonly style="background-color: #e9ecef;">
+        </div>
+
+        <div class="form-group">
+            <label for="numeroEndereco">Número da Morada:</label>
+            <input type="text" id="numeroEndereco" th:field="*{numeroEndereco}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="numeroCartao">Número do Cartão de Crédito:</label>
+            <input type="text" id="numeroCartao" th:field="*{numeroCartao}" required>
+        </div>
+
+        <button type="submit">Confirmar Compra</button>
+    </form>
+</div>
+
+<script>
+    function buscarCep() {
+        const cep = document.getElementById('cep').value;
+
+        if (cep) {
+            document.getElementById('endereco').value = "Buscando...";
+            document.getElementById('bairro').value = "Buscando...";
+            document.getElementById('cidade').value = "Buscando...";
+
+            fetch('http://localhost:8081/cep/' + cep)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('endereco').value = data.logradouro;
+                    document.getElementById('bairro').value = data.bairro;
+                    document.getElementById('cidade').value = data.cidade + " - " + data.estado;
+                })
+                .catch(error => {
+                    console.error('Erro de CORS ou API desligada:', error);
+                    document.getElementById('endereco').value = "Erro na integração";
+                    document.getElementById('bairro').value = "";
+                    document.getElementById('cidade').value = "";
+                });
+        }
+    }
+</script>
+</body>
+</html>
